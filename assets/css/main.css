@@ -374,10 +374,66 @@ html {
 
 body {
   background-color: #F6F6F8;
-  color: #2E2D33; }
+  color: #2E2D33;
+  font-size: 75%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fira Sans", sans-serif; }
 
 h1 {
   font-weight: 300; }
+
+a {
+  text-decoration: none;
+  color: #BD5248; }
+  a:hover {
+    color: #2E2D33; }
+  a:visited, a:active {
+    color: rgba(0, 0, 0, 0.2); }
+
+.home-wrap header {
+  width: 135px;
+  background: white;
+  padding: 30px; }
+  .home-wrap header .header-position {
+    position: fixed;
+    top: 30px;
+    bottom: 30px;
+    width: 135px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .home-wrap header .logo {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+    background-image: url(/assets/imgs/logo-dk.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    padding: 0;
+    margin: 0; }
+  .home-wrap header .site-nav ul {
+    list-style: none;
+    margin: 20px 0;
+    padding-left: 10px;
+    text-align: left; }
+    .home-wrap header .site-nav ul li {
+      margin-bottom: 10px; }
+      .home-wrap header .site-nav ul li:last-child {
+        margin-bottom: 0; }
+  .home-wrap header .email-link {
+    display: block;
+    text-align: left;
+    padding-left: 10px; }
+
+.home-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh; }

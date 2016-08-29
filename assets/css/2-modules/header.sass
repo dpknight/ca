@@ -1,0 +1,45 @@
+.home-wrap header
+  width: 135px
+  background: white
+  padding: 30px
+
+  .header-position
+    position: fixed
+    top: 30px
+    bottom: 30px
+    width: 135px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  .logo
+    +hide-text // Burbon Mixin
+    background:
+      image: url(/assets/imgs/logo-dk.svg)
+      repeat: no-repeat
+      position: center
+      size: contain
+      //color: pink
+    height: 80px
+    width: 80px
+    display: inline-block
+    padding: 0
+    margin: 0
+
+  .site-nav
+    ul
+      list-style: none
+      margin: 20px 0
+      padding-left: 10px
+      text-align: left
+
+      li
+        margin-bottom: 10px
+
+        &:last-child
+          margin-bottom: 0
+
+  .email-link
+    display: block
+    text-align: left
+    padding-left: 10px

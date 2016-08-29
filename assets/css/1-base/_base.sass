@@ -9,9 +9,26 @@ html
 body
   background-color: $bg-colour
   color: $text-colour
+  font-size: 75% // 12px
 
 h1, h2, h3, h4, h5, h6
   font-family: $primary-font
 
 h1
   font-weight: 300
+
+h2
+h3
+h4
+h5
+h6
+
+a
+  text-decoration: none
+  color: $link-colour
+
+  &:hover
+    color: $text-colour
+
+  &:visited, &:active
+    color: rgba(0,0,0, 0.2)
