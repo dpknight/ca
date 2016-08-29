@@ -1,13 +1,22 @@
+<!-- Create a Mixin for the nav -->
+mixin nav-content()
+  ul
+    li: a(href="#about") About DK
+    li: a(href="#work") Work
+    li: a(href="#experience") Experience
+    li: a(href="#skills") Skills
+    li: a(href="#contact") Contact Me
+    
+.mobile-nav
+  +nav-content()
+ 
 header
   .header-position
-    h1.logo Derek Knight
+    h1.logo Derek Philip Knight Designs
 
     nav.site-nav
-      ul
-        li: a(href="#about") About DK
-        li: a(href="#work") Work
-        li: a(href="#experience") Experience
-        li: a(href="#skills") Skills
-        li: a(href="#contact") Contact Me
+      +nav-content()
     
     a(href="mailto:dpk@derekknight.ca").email-link +email me
+    
+    .mobile-nav-toggle: span

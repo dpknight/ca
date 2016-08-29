@@ -8,3 +8,45 @@
 @import "2-modules/header";
 
 @import "3-layouts/home";
+
+@media screen and (max-width: 775px) {
+  .home-wrap {
+    display: block;
+
+    header {
+      width: auto;
+      padding: 30px;
+
+      .header-position {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+      }
+
+        .site-nav, .email-link {
+          display: none;
+        }
+
+        .mobile-nav-toggle {
+          display: block;
+        }
+
+        .logo {
+          height: 40px;
+          width: 40px;
+        }
+
+        .word-mark {
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .mobile-nav.open{
+      transform: translateY(0%);
+    }
+  }
