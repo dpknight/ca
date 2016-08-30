@@ -4,10 +4,12 @@
 @import "1-base/fonts";
 @import "1-base/vars";
 @import "1-base/base";
+@import "1-base/grid";
 
-@import "2-modules/header";
+@import "3-sections/header";
+@import "3-sections/about";
 
-@import "3-layouts/home";
+@import "4-layouts/home";
 
 @media screen and (max-width: 775px) {
   .home-wrap {
@@ -46,7 +48,24 @@
       }
     }
 
-    .mobile-nav.open{
+    .mobile-nav.open {
       transform: translateY(0%);
     }
   }
+
+@media screen and (max-width: 640px){
+  .home-sections section {
+    padding: 10px;
+  }
+  .home-sections .flex {
+    display: block;
+  }
+
+  .col-1 {
+    max-width: 100%;
+  }
+
+  .col-width-50 {
+    width: auto;
+  }
+}

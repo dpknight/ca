@@ -56,7 +56,9 @@
       border-radius: 50%
       cursor: pointer
 
-      span, span:before,span:after
+      transition: all 0.3s ease-in-out
+
+      span, span:before, span:after
         transition: all 0.3s ease-in-out
 
       span
@@ -84,6 +86,24 @@
           top: 6px
 
       &:hover
+        background-color: rgba($accent-colour, 0.9)
+        border-color: rgba($accent-colour, 1)
+
+        span
+          background-color: rgba(white, 1)
+
+          &:before, &:after
+            transform-origin: center
+            top: 0
+
+          &:before
+            background: transparent
+
+          &:after
+            background-color: rgba(white, 1)
+            transform: rotate(-90deg)
+
+      &.is-open
         span
           background: transparent
 
