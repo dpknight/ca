@@ -7,3 +7,22 @@
 
 .col-width-50
   width: 50%
+
+.push--right
+  margin-left: 330px
+
+.pull--left
+  margin-left: -330px
+
+.full-width
+  width: 640px
+
+@media screen and (max-width: 640px)
+  .col-1
+    max-width: 100%
+
+  .col-width-50
+    width: auto
+
+  .push--right, .pull--left
+    margin-left: 10px

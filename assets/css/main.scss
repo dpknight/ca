@@ -6,8 +6,11 @@
 @import "1-base/base";
 @import "1-base/grid";
 
+@import "2-modules/buttons";
+
 @import "3-sections/header";
 @import "3-sections/about";
+@import "3-sections/work";
 
 @import "4-layouts/home";
 
@@ -59,13 +62,5 @@
   }
   .home-sections .flex {
     display: block;
-  }
-
-  .col-1 {
-    max-width: 100%;
-  }
-
-  .col-width-50 {
-    width: auto;
   }
 }
