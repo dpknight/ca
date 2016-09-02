@@ -1,0 +1,31 @@
+// Create a mixin for the articles
+mixin article-thumb
+  a(href="#", target="_blank", style="background-image: url(http://fillmurray.com/500/500)").article-thumb
+    .article-meta
+      .name Article name
+      .date Mth DD, YYYY
+
+section.articles
+  .flex.flex--center
+      
+    .col-width-50
+      .article-wrap
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+        +article-thumb
+          
+      
+    .col-width-50.flex.flex--center.order-first
+      .col-1
+        .descp-wrap
+          .lead-para Duis aute irure dolor in reprehenderit in voluptate.
+          a(href="#", target="_blank").home-cta See all articles

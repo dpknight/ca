@@ -1,0 +1,69 @@
+section.articles
+  background:
+    image: url(../imgs/bg/linedpaper/linedpaper.png)
+    position: center
+    repeat: repeat
+  overflow: hidden
+  padding-bottom: 0 !important
+  padding-top: 0 !important
+
+  .col-width-50
+
+  .col-1
+
+
+  .home-cta
+    color: white
+    background: $accent-colour
+    margin-bottom: 0
+
+  .article-wrap
+    //margin: -30px 0
+    +clearfix
+
+  .article-thumb
+    display: block
+    background:
+      size: cover
+      position: center
+    width: 25%
+    float: left
+    position: relative
+    overflow: hidden
+
+    &:after
+      content: ''
+      display: block
+      padding-bottom: 100% /* CSS Hack, similar to the flex-video settings from foundation */
+
+    &:hover
+      .article-meta
+        opacity: 1
+        transform: translateY(0%) scale(1)
+
+  .article-meta
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: fade-out($accent-colour, 0.2)
+    color: white
+    padding: 10px
+    opacity: 0
+    transform: translate(0%, 100%) scale(0.5)
+    transition: all 0.3s ease-in-out
+
+    .name
+      font-size: 18px
+
+    .date
+      font-style: italic
+
+
+@media (max-width: 640px)
+  .col-1
+    .descp-wrap
+      padding-bottom: 50px
+      .lead-para
+        padding-top: 250px

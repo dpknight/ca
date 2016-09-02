@@ -1,5 +1,6 @@
 @import "0-tools/bourbon/bourbon";
 @import "0-tools/normalize";
+@import "0-tools/foundation/foundation";
 
 @import "1-base/fonts";
 @import "1-base/vars";
@@ -7,10 +8,12 @@
 @import "1-base/grid";
 
 @import "2-modules/buttons";
+@import "2-modules/flex-video";
 
 @import "3-sections/header";
 @import "3-sections/about";
 @import "3-sections/work";
+@import "3-sections/articles";
 
 @import "4-layouts/home";
 
