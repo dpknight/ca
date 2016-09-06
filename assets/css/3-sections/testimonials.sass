@@ -1,0 +1,55 @@
+section.testimonials
+  background:
+    image: url(../imgs/bg/testimonials-bg2.jpg)
+    size: cover
+    position: center bottom
+    repeat: no-repeat
+    //color: pink
+  color: white
+  margin: 0px !important
+  padding: 0px !important
+  overflow: hidden
+
+  .home-cta
+    color: $text-colour
+
+  .profile-pics
+    list-style: none
+    height: 100%
+
+  .profile-pic
+    width: 80px
+    height: 80px
+    background:
+      size: cover
+      position: center
+    border-radius: 50%
+    margin-bottom: 30px
+    margin-right: 100%
+    box-shadow: 0px 4px 8px rgba(0,0,0, 1)
+    position: relative
+
+  .caption
+    display: none
+    position: absolute
+    left: 100%
+    bottom: 50%
+    margin-left: 20px
+    padding: 30px
+    width: 300px
+    background: rgba(255, 255, 255, 0.7)
+    color: $text-colour
+    box-shadow: 0px 4px 8px rgba(0,0,0, 1)
+
+    p
+      margin-bottom: 15px
+
+    cite
+      text-align: right
+
+      &:before
+        display: inline-block
+        vertical-align: text-bottom
+
+  .profile-pic.caption-open .caption
+    display: block

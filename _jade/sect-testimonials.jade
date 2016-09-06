@@ -1,0 +1,25 @@
+<!-- JADE Mixin -->
+mixin profile-pic
+  li.profile-pic(style="background-image: url(http://fillmurray.com/g/80/80);")
+    .caption
+      p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      cite - Joel Smith
+
+section.testimonials
+  .flex.flex--center
+    .col-1
+      ul.profile-pics
+        +profile-pic
+        +profile-pic
+        li.profile-pic.caption-open(style="background-image: url(http://fillmurray.com/g/80/80);")
+          .caption
+            p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            cite Joel Smith
+        +profile-pic
+        +profile-pic
+        +profile-pic
+        
+      
+    .col-1
+      p.lead-para Ut enim ad minim veniam.
+      a(href="#", target="_blank").home-cta Contact me
