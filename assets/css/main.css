@@ -3019,8 +3019,10 @@ section.testimonials {
     height: calc(100% + 100px);
     padding: 0 0 30px 0;
     position: relative;
-    top: 0px;
-    transition: all 0.35s ease-in-out; }
+    top: 800px;
+    transition: all 0.5s ease-in-out; }
+    section.testimonials .profile-pics.show {
+      top: 0px; }
   section.testimonials .profile-pic {
     width: 80px;
     height: 80px;
