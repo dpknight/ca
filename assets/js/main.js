@@ -5,11 +5,21 @@ $(function() {
   $(window).scroll( function() {
     workThumbScroll();
     displayTestimonials();
+    displayArticles();
+  });
+
+  // Watch for window resize
+  $(window).resize( function() {
+    if($(window).width > 640 ) {
+      wideView();
+    } else {
+      narrowView();
+    }
   });
 
   //
   captionClick();
-
+  setInterval(function(){animateArticle()}, 4000);
 });
 
 // The Work section thumbnail scroll
@@ -34,12 +44,36 @@ function captionClick() {
     var $this = $(this)
     var picTop = $this.position().top;
     var vertMath = -1 * ( Math.round( picTop - 230 ) );
+    var picLeft = $this.position().left;
+    var horzMath = -1 * (picLeft - 115);
 
-    // console.log(Math.round(vertMath));
-    $this.parent().css('top', + vertMath + 'px');
+    //console.log($(window).width());
 
+    if($(window).width() > 640) {
+      $this.parent().css('top', + vertMath + 'px');
+    } else {
+      $('.caption').css({'margin-left' : '-90px'});
+      $this.parent().css('left', + horzMath + 'px');
+    }
+    // Add the caption-open class to the element clicked, remove from its siblings
     $this.addClass('caption-open').siblings().removeClass('caption-open');
+    // Change the curser of the element clicked to the default, and change its sibling's cursor
+    // to pointer
+    $this.css({'cursor' : 'default'}).siblings().css({'cursor' : 'pointer'});
   });
+}
+
+//
+function displayArticles() {
+  var winScroll = $(window).scrollTop();
+
+  if( $('section.articles').offset().top - $(window).height()/2 < winScroll ) {
+    $('.article-thumb').each(function(i){
+      setTimeout(function() {
+        $('.article-thumb').eq(i).addClass('is-visible')
+      }, 200 * i);
+    });
+  }
 }
 
 // Lanches the Testimonials section on scroll
@@ -47,11 +81,49 @@ function displayTestimonials() {
   // Capture the position from the top, how far have we scrolled
   var winScroll = $(window).scrollTop();
 
-  if($('section.testimonials').offset().top - 500 < winScroll) {
-    $('.profile-pics').addClass('show');
-    setTimeout(function() {
-      // This will default to starting with the 3rd caption opened
-      $('.profile-pic:nth-child(3)').addClass('caption-open');
-    }, 400);
+  if($('section.testimonials').offset().top - $(window).height()/2 < winScroll ) {
+    if ($(window).width() > 640) {
+      $('.profile-pics').addClass('show');
+
+      if(!$('.profile-pic').hasClass('caption-open')) {
+        setTimeout(function() {
+          // This will default to starting with the 3rd caption opened
+          $('.profile-pic:nth-child(3)').addClass('caption-open');
+        }, 400);
+      }
+    } else {
+      narrowView();
+    }
   }
+}
+
+// Control display for wide screens
+function narrowView() {
+  $('.profile-pics').css({
+    'top' : '230px',
+    'left' : '0px'
+  });
+
+  $('.profile-pic').first().addClass('caption-open').siblings().removeClass('caption-open');
+  $('.caption').css({'left' : '100%'});
+}
+
+// Control display for narrow screens
+function wideView() {
+  $('.profile-pics').css({
+    'top' : '0px',
+    'left' : '0px'
+  });
+
+  $('.profile-pic:nth-child(3)').addClass('caption-open').siblings().removeClass('caption-open');
+}
+
+// Controls the animation of the articles
+function animateArticle() {
+  // Create a random number that will be used to select an article at... Random
+  var randNum = Math.floor(Math.random() * $('.article-thumb').length) + 1;
+
+  $('.article-thumb').eq(randNum).addClass('is-emph').siblings().removeClass('.is-emph');
+
+  console.log($('.article-thumb').eq(randNum).innerHTML);
 }

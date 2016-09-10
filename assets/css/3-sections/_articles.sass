@@ -30,6 +30,19 @@ section.articles
     float: left
     position: relative
     overflow: hidden
+    opacity: 0
+    transition: all 0.3s ease-in-out
+
+    &.is-visible
+      opacity: 1
+
+    &.is-emph
+      backface-visibility: visible !important
+      animation-name: flipInY
+      animation-duration: 1s
+      animation-fill-mode: both
+      z-index: 1
+
 
     &:after
       content: ''
@@ -56,14 +69,54 @@ section.articles
 
     .name
       font-size: 18px
+      line-height: 1
+      padding-bottom: 5px
 
     .date
       font-style: italic
 
 
 @media (max-width: 640px)
-  .col-1
-    .descp-wrap
-      padding-bottom: 50px
-      .lead-para
-        padding-top: 250px
+  section.articles
+
+    .col-width-50
+      margin-top: 0px
+      margin-left: -10px
+      width: calc(100% + 20px)
+
+    .col-1
+
+      .descp-wrap
+        padding-bottom: 50px
+
+        .lead-para
+          padding-top: 30px
+
+
+@media (max-width: 999px) and (min-width: 640px)
+  section.articles
+    .col-width-50
+      .article-wrap
+        .article-thumb
+          width: 33.3%
+
+// Animate CSS
+@keyframes flipInY
+  from
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg)
+    animation-timing-function: ease-in
+    opacity: 0
+
+  40%
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg)
+    animation-timing-function: ease-in
+
+  60%
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg)
+    opacity: 1
+
+  80%
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg)
+
+  to
+    transform: perspective(400px)

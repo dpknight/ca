@@ -10,18 +10,12 @@ section.articles
       
     .col-width-50
       .article-wrap
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
-        +article-thumb
+        {% for posts in site.posts limit: 12 %}
+        a(href="{{posts.url}}", target="_blank", style="background-image: url({{posts.thumbnail}})").article-thumb
+          .article-meta
+            .name {{posts.title}}
+            .date {{posts.date | date: "%A, %B %d, %Y"}}
+        {% endfor %}
           
       
     .col-width-50.flex.flex--center.order-first

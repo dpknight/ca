@@ -8,6 +8,7 @@ section.testimonials
   color: white
   //margin: 0px !important
   //padding: 0px !important
+  padding-top: 100px
   overflow: hidden
 
   .home-cta
@@ -20,6 +21,7 @@ section.testimonials
     padding: 0 0 30px 0
     position: relative
     top: 800px
+    left: 0px
     transition: all 0.5s ease-in-out
 
     &.show
@@ -33,7 +35,7 @@ section.testimonials
       position: center
     border-radius: 50%
     margin-bottom: 35px
-    margin-right: 100%
+    margin-left: 0px
     box-shadow: 0px 4px 8px rgba(0,0,0, 1)
     position: relative
     cursor: pointer
@@ -68,3 +70,31 @@ section.testimonials
   .profile-pic.caption-open .caption
     opacity: 1
     transform: scale(1)
+
+@media (max-width: 640px)
+  section.testimonials
+    //padding-top: 230px !important
+    height: 500px
+    background-position: bottom left
+
+    .profile-pics
+      margin: 0
+      padding: 0
+      width: 115px * 6
+      left: 0px
+
+    .profile-pic
+      display: inline-block
+      margin-right: 35px
+
+    .caption
+      bottom: 100px
+      left: 0px !important
+      box-sizing: border-box
+
+    .caption-open
+      .caption
+        left: -25px !important
+
+    .lead-para
+      margin-top: 250px

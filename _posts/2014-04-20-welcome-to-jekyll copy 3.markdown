@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Stoked to be learning about Jekyll, Jade, Sass, and Gulp"
+title:  "Welcome to Jekyll!"
 date:   2014-04-20 09:11:03
-thumbnail: http://fillmurray.com/1500/1500
+thumbnail: http://fillmurray.com/300/400
 categories: jekyll update
 ---
 
