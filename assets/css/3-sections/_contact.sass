@@ -2,82 +2,77 @@ section.contact
 
   p
     line-height: 1.2
+
   form
 
     fieldset
 
-      .form-field
+      .input-group
         position: relative
         margin-bottom: 15px
 
         &:first-child
           margin-top: 30px
 
-        &.has-error
-          .error-icon
-            display: block
-
-          .error-msg
-            display: block
-
-          input, textarea
-            border-bottom: 3px solid red
-            color: red
-
         input, textarea
-          margin: 0 0 5px
-          border-top: 0
-          border-left: 0
-          border-right: 0
-          border-bottom: 2px solid grey
+          background: rgba(white, 0.5)
+          border: 2px solid #283593
           box-shadow: none
+          font-family: $primary-font
+          font-size: 24px
+          line-height: 1.5
+          color: #283593
+          margin-bottom: 30px
+
+          &:focus, &:active
+            outline: none
+
+
+          &[type= "text"],
+          &[type= "email"],
+          &[name= "comments"]
+            border: none
+            border-bottom: solid 2px #283593
+
+          &[name= "comments"]
+            resize: none
+
+          &[type= "submit"]
+            font-family: $secondary-font
+            margin: 0
+            padding: 0 20px
+            &:hover, &:active
+              color: white
+              background: #283593
+
+        input
+          &:focus + label,
+          &.has-value + label
+            top: -30px
+            font-size: 12px
+            font-weight: 700
+            color: #aaa
 
         textarea
-          resize: none
+          &:focus + label,
+          &.has-value + label
+            top: -20px
+            font-size: 12px
+            font-weight: 700
+            color: #aaa
 
-        .error-icon
-          position: absolute
-          top: 35px
-          right: 10px
-          width: 20px
-          height: 20px
-          margin: 0
-          padding: 0
-          text-indent: -9999px
+        label
+          font:
+            family: $secondary-font
+            style: italic
+          color: #999
+          pointer-events: none
+          +transition
 
-          span
-            position: absolute
-            width: 100%
-            height: 5px
-            background: transparent
-            top: 50%
-            left: 50%
-            transform: translate(-50%, -50%)
 
-            &:before, &:after
-              content: ""
-              position: absolute
-              width: 100%
-              height: 100%
-              background-color: red
+          &.name, &.email
+            +position(absolute, 0 null null 0px)
+            +transform(translateY(50%))
 
-            &:before
-              transform: rotate(-45deg)
-              top: 0px
-              left: 0
-
-            &:after
-              transform: rotate(45deg)
-              top: 0px
-              left: 0
-
-        .error-msg
-          font-weight: 700
-          line-height: 1
-          margin: 0
-          padding: 0
-          color: red
-          position: relative
-
-        .error-msg, .error-icon
-          display: none
+          &.comments
+            +position(absolute, 0px null null 0px)

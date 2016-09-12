@@ -20,6 +20,7 @@ $(function() {
   //
   captionClick();
   setInterval(function(){animateArticle()}, 4000);
+  formControls();
 });
 
 // The Work section thumbnail scroll
@@ -126,4 +127,37 @@ function animateArticle() {
   $('.article-thumb').eq(randNum).addClass('is-emph').siblings().removeClass('.is-emph');
 
   console.log($('.article-thumb').eq(randNum).innerHTML);
+}
+
+
+// Form Controls
+function formControls(){
+  $('form input').focusout(function() {
+    var $this = $(this),
+          input_val = $this.val();
+
+    if(input_val === "") {
+        $this.removeClass('has-value');
+      } else {
+        $this.addClass('has-value');
+      }
+    }
+  );
+
+  $('form textarea').focusout(function() {
+    var $this = $(this),
+          input_val = $this.val();
+
+    if(input_val === "") {
+        $this.removeClass('has-value');
+      } else {
+        $this.addClass('has-value');
+      }
+    }
+  );
+
+}
+
+function inputFieldControls() {
+
 }

@@ -9,39 +9,17 @@ section.contact
       .contact-form
         form(id="contact-form", method="post", action="../assets/js/contact-form")
           fieldset
-            .form-field
-              label
-                span First Name
-              input(type='text', name="first_name", placeholder="First Name")
-              .error-icon
-                span X
-              .error-msg You must have a name? Its the one your friends call you.
+            .input-group
+              input(type='text', name="first_name")
+              label.name Your full name
               
-            .form-field
-              label 
-                span Last Name
-              input(type='text', name="last_name", placeholder="Last Name")
-              .error-icon
-                span X
-              .error-msg No last name? Brazillian? Portuguese?
+            .input-group
+              input(type='email', name="email_address")
+              label.email: span Your email address
 
-            
-            .form-field
-              label 
-                span Email
-              input(type='text', name="email_address", placeholder="Email")
-              .error-icon
-                span X
-              .error-msg You must have a valid email. How will I know where to reach you?
+            .input-group
+              textarea(name='comments', rows=5)
+              label.comments: span Comments
 
-            
-            .form-field
-              label 
-               span Comments
-              textarea(name='comments', placeholder="Leave some comments", rows=5)
-              .error-icon
-                span X
-              .error-msg Of few words I see. I get it, but what will we talk about?
-
-            
-          input(type='submit', value='Lets Connect ').home-cta
+            .input-group
+              input(type='submit', value='Lets Connect ').home-cta

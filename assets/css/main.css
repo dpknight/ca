@@ -3258,70 +3258,62 @@ section.portfolio {
 section.contact p {
   line-height: 1.2; }
 
-section.contact form fieldset .form-field {
+section.contact form fieldset .input-group {
   position: relative;
   margin-bottom: 15px; }
-  section.contact form fieldset .form-field:first-child {
+  section.contact form fieldset .input-group:first-child {
     margin-top: 30px; }
-  section.contact form fieldset .form-field.has-error .error-icon {
-    display: block; }
-  section.contact form fieldset .form-field.has-error .error-msg {
-    display: block; }
-  section.contact form fieldset .form-field.has-error input, section.contact form fieldset .form-field.has-error textarea {
-    border-bottom: 3px solid red;
-    color: red; }
-  section.contact form fieldset .form-field input, section.contact form fieldset .form-field textarea {
-    margin: 0 0 5px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 2px solid grey;
-    box-shadow: none; }
-  section.contact form fieldset .form-field textarea {
-    resize: none; }
-  section.contact form fieldset .form-field .error-icon {
-    position: absolute;
-    top: 35px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    padding: 0;
-    text-indent: -9999px; }
-    section.contact form fieldset .form-field .error-icon span {
-      position: absolute;
-      width: 100%;
-      height: 5px;
-      background: transparent;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
-      section.contact form fieldset .form-field .error-icon span:before, section.contact form fieldset .form-field .error-icon span:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: red; }
-      section.contact form fieldset .form-field .error-icon span:before {
-        -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-        top: 0px;
-        left: 0; }
-      section.contact form fieldset .form-field .error-icon span:after {
-        -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-        top: 0px;
-        left: 0; }
-  section.contact form fieldset .form-field .error-msg {
+  section.contact form fieldset .input-group input, section.contact form fieldset .input-group textarea {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #283593;
+    box-shadow: none;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #283593;
+    margin-bottom: 30px; }
+    section.contact form fieldset .input-group input:focus, section.contact form fieldset .input-group input:active, section.contact form fieldset .input-group textarea:focus, section.contact form fieldset .input-group textarea:active {
+      outline: none; }
+    section.contact form fieldset .input-group input[type="text"], section.contact form fieldset .input-group input[type="email"], section.contact form fieldset .input-group input[name="comments"], section.contact form fieldset .input-group textarea[type="text"], section.contact form fieldset .input-group textarea[type="email"], section.contact form fieldset .input-group textarea[name="comments"] {
+      border: none;
+      border-bottom: solid 2px #283593; }
+    section.contact form fieldset .input-group input[name="comments"], section.contact form fieldset .input-group textarea[name="comments"] {
+      resize: none; }
+    section.contact form fieldset .input-group input[type="submit"], section.contact form fieldset .input-group textarea[type="submit"] {
+      font-family: "Rokkitt", serif;
+      margin: 0;
+      padding: 0 20px; }
+      section.contact form fieldset .input-group input[type="submit"]:hover, section.contact form fieldset .input-group input[type="submit"]:active, section.contact form fieldset .input-group textarea[type="submit"]:hover, section.contact form fieldset .input-group textarea[type="submit"]:active {
+        color: white;
+        background: #283593; }
+  section.contact form fieldset .input-group input:focus + label,
+  section.contact form fieldset .input-group input.has-value + label {
+    top: -30px;
+    font-size: 12px;
     font-weight: 700;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-    color: red;
-    position: relative; }
-  section.contact form fieldset .form-field .error-msg, section.contact form fieldset .form-field .error-icon {
-    display: none; }
+    color: #aaa; }
+  section.contact form fieldset .input-group textarea:focus + label,
+  section.contact form fieldset .input-group textarea.has-value + label {
+    top: -20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaa; }
+  section.contact form fieldset .input-group label {
+    font-family: "Rokkitt", serif;
+    font-style: italic;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.15s ease-out 0s; }
+    section.contact form fieldset .input-group label.name, section.contact form fieldset .input-group label.email {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      -webkit-transform: translateY(50%);
+      transform: translateY(50%); }
+    section.contact form fieldset .input-group label.comments {
+      position: absolute;
+      top: 0px;
+      left: 0px; }
 
 .home-wrap {
   display: -ms-flexbox;
