@@ -1,0 +1,34 @@
+// Jade Mixin for the image thumbnails
+mixin portfolio-thumb(link, img)
+  a(href="#{link}", target="_blank").portfolio-img-thumb
+    img(src="#{img}")
+
+section.portfolio
+  .flex.flex--center
+    .col-width-50.flex.flex--center.col-left
+      .col-1
+        p.lead-para Lorem ipsum dolor sit amet.
+        
+        // Boxes
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        +portfolio-thumb('#', 'http://fillmurray.com/g/300/400')
+        .cf
+        a(href="#", target="_blank").home-cta See more on Dribble
+      
+    .col-width-50.flex.flex--center.col-right
+      .col-1
+        p.lead-para Duis aute irure dolor.
+        
+        // Boxes
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        +portfolio-thumb('#', 'http://fillmurray.com/600/800')
+        .cf
+        a(href="#", target="_blank").home-cta See more on Behance
