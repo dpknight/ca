@@ -1,18 +1,24 @@
-var gulp              = require('gulp');
-var browserSync  = require('browser-sync');
-var sass                = require('gulp-sass');
-var prefix             = require('gulp-autoprefixer');
-var cp                  = require('child_process');
-var jade               = require('gulp-jade');
-var concat           = require('gulp-concat');
-var jshint            = require('gulp-jshint');
+'use-strict';
+var gulp = require('gulp');
+var watch = require('gulp-watch');
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var cp = require('child_process');
+var jade = require('gulp-jade');
+var jadeToPHP = require('gulp-jade2php');
+var pugTwo = require('gulp-pug2');
+var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var connect = require('gulp-connect-php');
+var jadePHP = require('gulp-jade-php');
+var browserSync = require('browser-sync');
+var php = [];
+
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
-
-
 
 
 /**
@@ -32,21 +38,6 @@ gulp.task('jekyll-build', function (done) {
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
-
-
-
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        },
-        notify: false // Hide the browser-sync message box
-    });
-});
-
 
 
 /**
@@ -83,6 +74,29 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('assets/js'));
 });
 
+/*
+  * Task to handle changes to PHP files
+  */
+gulp.task('php', function() {
+  return gulp.src('_php/**/*.php')
+  .pipe(gulp.dest('_site/assets/php'))
+  .pipe(browserSync.reload({stream:true}))
+  .pipe(gulp.dest('assets/php/'));
+});
+
+/*
+* Compile Jade files to PHP
+*/
+gulp.task('jadeToPHP', function() {
+
+});
+
+/*
+  * PHP Server Conncetion/Creation
+  */
+gulp.task('connect-sync', function() {
+  return connect.server();
+  });
 
 /**
  * Watch scss files for changes & recompile
@@ -92,12 +106,23 @@ gulp.task('scripts', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_includes/*'], ['jekyll-rebuild']);
+    gulp.watch(['*.html', '_layouts/*.html', '_posts/*', '_includes/*', '_php/*'], ['jekyll-rebuild']);
     gulp.watch('_jade/*.jade', ['jade']);
     gulp.watch('assets/js/**/*.js', ['scripts']);
+    gulp.watch('_php/**/*.php', ['php']);
 });
 
-
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('browser-sync', ['connect-sync', 'sass', 'scripts', 'jade', 'php', 'jekyll-build'], function() {
+    browserSync({
+        server: {
+          baseDir: '_site'
+        },
+        notify: false // Hide the browser-sync message box
+    });
+});
 
 /**
  * Default task, running just `gulp` will compile the sass,

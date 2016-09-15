@@ -10,14 +10,21 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^1.3.7",
-    "gulp": "^3.8.8",
+    "gulp": "^3.9.0",
     "gulp-autoprefixer": "1.0.0",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-php": "0.0.8",
     "gulp-jade": "^1.1.0",
+    "gulp-jade2php": "^1.0.4",
     "gulp-jshint": "^2.0.1",
+    "gulp-pug": "^3.0.4",
+    "gulp-pug2": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "jade-php": "^0.1.4",
     "jshint": "^2.9.3"
   },
   "repository": {

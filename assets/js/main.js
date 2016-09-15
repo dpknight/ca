@@ -126,7 +126,7 @@ function animateArticle() {
 
   $('.article-thumb').eq(randNum).addClass('is-emph').siblings().removeClass('.is-emph');
 
-  console.log($('.article-thumb').eq(randNum).innerHTML);
+  // console.log($('.article-thumb').eq(randNum).innerHTML);
 }
 
 
