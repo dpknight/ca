@@ -7,14 +7,14 @@ section.contact
       
       // Form
       .contact-form
-        form(id="contact-form", method="post", action="../assets/php/contact_form.php")
+        form(id="contact-form", method="post", action="../assets/php/contact_form.php", class="ajax")
           fieldset
             .input-group
-              input(type='text', name="first_name")
+              input(type='text', name='name')
               label.name Your full name
               
             .input-group
-              input(type='email', name="email_address")
+              input(type='email', name='email')
               label.email: span Your email address
 
             .input-group

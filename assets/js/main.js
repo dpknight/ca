@@ -21,6 +21,7 @@ $(function() {
   captionClick();
   setInterval(function(){animateArticle()}, 4000);
   formControls();
+  initContactForm();
 });
 
 // The Work section thumbnail scroll
@@ -160,4 +161,46 @@ function formControls(){
 
 function inputFieldControls() {
 
+}
+
+// Contact Form Functionality
+function initContactForm() {
+  $('form.ajax').on('submit', function() {
+    // Store quick references to the data in the form
+    var $this = $(this);
+    var $url = $this.attr('action');
+    var $type = $this.attr('method');
+    var $data = {};
+
+    /*
+      * Find any element with a 'name' attribute
+      * and loop through the elements
+      */
+    $this.find('[name]').each(function(index, value) {
+      // Quick reference to the input field(s)
+      var $field = $(this);
+      var $name = $field.attr('name');
+      var $value = $field.val();
+
+      // Append to the data object the value of each input field
+      $data[$name] = $value;
+    });
+
+    // console.log($data);
+
+    // Use Ajax method to send the form
+    $.ajax({
+      // Specify some data that will be posted
+      url: $url,
+      type: $type,
+      data: $data,
+      success: function(response) {
+        console.log(response);
+        // Callback
+      }
+    });
+
+    // Prevent the form from submitting via its normal method
+    return false;
+  });
 }
